@@ -15,23 +15,20 @@ get '/' do
     message = "Guess the secret number!"
   elsif guess.to_i == number
     message = "You win! Let's play again. Guess the secret number!"
-    game_end
+    number = rand(100)
+    @@guesses_remaining = 5
   elsif @@guesses_remaining > 1
     message = check_guess(guess, number)
     @@guesses_remaining -=1
     message_two = "#{@@guesses_remaining} guesses left."
   else
     message = "You lose! Oh well. Let's start over. Guess the secret number!"
-    game_end
+    number = rand(100)
+    @@guesses_remaining = 5
   end
 
   erb :index, :locals => {:number => number, :message => message, :message_two => message_two, :cheat_message => cheat_message}
 
-end
-
-def game_end
-  number = rand(100)
-  @@guesses_remaining = 5
 end
 
 def check_guess(guess, number)
