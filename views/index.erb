@@ -1,12 +1,59 @@
+<!DOCTYPE html>
 <html>
-  <head></head>
+  <head>
+    <style>
+      body {
+        background: #c1dbeb;
+      }
+      .formbox {
+        background: #FFF;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        width: 500px;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-radius: 10px;
+        display: block;
+        font: helvetica;
+        font-family: sans-serif;
+
+      }
+      h1 {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: -90px;
+        width: 500px;
+        height: 50px;
+        background-color: #19394d;
+        padding-top: 100px;
+        border-radius: 10px;
+      }
+
+      #title {
+        margin-top: auto;
+        margin-bottom: 10px;
+        color: #FFF;
+        font-family: sans-serif;
+        font: helvetica;
+        text-align: center;
+      }
+
+    </style>
+  </head>
   <body>
-    <form>
-      <input type='text' name='guess' />
-      <input type='submit' value="Guess!"/>
-    </form>
-    <p>
-      <%= message %>
-    </p>
+    <h1>
+      <p id="title">Number Generator</p>
+    </h1>
+    <div class="formbox">
+      <form>
+        <input type='text' name='guess' />
+        <input type='submit' value="Guess!"/>
+      </form>
+      <p>
+        <%= message %>
+      </p>
+    </div>
   </body>
 </html>
